@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Code des Élites · Comment séduire, gérer et garder les femmes hors du commun</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --noir: #0A0A0A;
+    --blanc: #F2F2F2;
+    --or: #C9A84C;
+    --or-light: #E8C96A;
+    --or-pale: rgba(201,168,76,0.12);
+    --bordeaux: #800020;
+    --bordeaux-dark: #3D0010;
+    --gris: #1A1A1A;
+    --gris2: #242424;
+    --gris3: #333;
+    --texte: #CCCCCC;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--noir);
+    color: var(--blanc);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── GRAIN OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* ── TOPBAR ── */
+  .topbar {
+    background: var(--bordeaux);
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--blanc);
+    text-transform: uppercase;
+  }
+
+  /* ── NAV ── */
+  nav {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    background: rgba(10,10,10,0.95);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+  }
+  .logo-nav {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    color: var(--or);
+    text-transform: uppercase;
+  }
+
+  /* ── SECTION BASE ── */
+  section { width: 100%; }
+  .container {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .container-wide {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 80px 24px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(128,0,32,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .lecture-tag {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--or);
+    border: 1px solid rgba(201,168,76,0.4);
+    padding: 6px 16px;
+    border-radius: 2px;
+    margin-bottom: 32px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--blanc);
+    margin-bottom: 24px;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--or);
+  }
+  .hero-sub {
+    font-size: 17px;
+    color: var(--texte);
+    max-width: 520px;
+    margin: 0 auto 48px;
+    line-height: 1.7;
+  }
+  .hero-divider {
+    width: 60px;
+    height: 2px;
+    background: var(--bordeaux);
+    margin: 0 auto 40px;
+  }
+
+  /* ── VISUAL HOOK ── */
+  .visual-hook {
+    background: var(--gris2);
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 4px;
+    padding: 40px;
+    margin: 48px auto;
+    max-width: 640px;
+    position: relative;
+  }
+  .visual-hook::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    color: var(--bordeaux);
+    opacity: 0.2;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    line-height: 1;
+  }
+  .hook-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--blanc);
+    position: relative;
+    z-index: 1;
+  }
+  .hook-source {
+    margin-top: 16px;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--or);
+  }
+
+  /* ── BODY TEXT ── */
+  .body-text {
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--texte);
+    margin-bottom: 24px;
+  }
+  .body-text strong {
+    color: var(--blanc);
+    font-weight: 600;
+  }
+  .body-text em {
+    color: var(--or);
+    font-style: italic;
+  }
+
+  /* ── SECTION TITLES ── */
+  .section-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--blanc);
+    margin-bottom: 32px;
+  }
+  .section-title em {
+    color: var(--or);
+    font-style: italic;
+  }
+
+  /* ── SEPARATOR ── */
+  .sep {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+    margin: 64px 0;
+  }
+  .sep-bordeaux {
+    background: linear-gradient(90deg, transparent, rgba(128,0,32,0.5), transparent);
+  }
+
+  /* ── PAIN BLOCK ── */
+  .pain-section {
+    padding: 80px 0;
+    background: var(--gris);
+    border-top: 1px solid rgba(201,168,76,0.08);
+    border-bottom: 1px solid rgba(201,168,76,0.08);
+  }
+  .pain-list {
+    list-style: none;
+    margin: 32px 0;
+  }
+  .pain-list li {
+    padding: 16px 0 16px 40px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 16px;
+    color: var(--texte);
+    line-height: 1.6;
+  }
+  .pain-list li:last-child { border-bottom: none; }
+  .pain-list li::before {
+    content: '×';
+    position: absolute;
+    left: 0;
+    color: var(--bordeaux);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  .pain-list li strong { color: var(--blanc); }
+
+  /* ── IMPACT QUOTE ── */
+  .impact-quote {
+    background: linear-gradient(135deg, var(--bordeaux-dark) 0%, rgba(128,0,32,0.6) 100%);
+    border-left: 4px solid var(--bordeaux);
+    border-radius: 0 4px 4px 0;
+    padding: 28px 32px;
+    margin: 40px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .impact-quote::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    width: 120px;
+    height: 120px;
+    background: rgba(201,168,76,0.05);
+    border-radius: 50%;
+  }
+  .impact-quote p {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--or-light);
+    font-style: italic;
+  }
+
+  /* ── STATS ROW ── */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin: 48px 0;
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .stat-block {
+    background: var(--gris2);
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--or);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: var(--texte);
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+  }
+
+  /* ── CHECKLIST ── */
+  .check-list {
+    list-style: none;
+    margin: 24px 0;
+  }
+  .check-list li {
+    padding: 12px 0 12px 36px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 16px;
+    color: var(--texte);
+    line-height: 1.5;
+  }
+  .check-list li:last-child { border-bottom: none; }
+  .check-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--or);
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .check-list li strong { color: var(--blanc); }
+
+  /* ── TRANSFORMATION BLOCK ── */
+  .transform-section {
+    padding: 80px 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(128,0,32,0.15) 0%, transparent 60%);
+  }
+
+  /* ── VERSUS TABLE ── */
+  .versus {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 40px 0;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(201,168,76,0.1);
+  }
+  .versus-head {
+    padding: 14px 20px;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .versus-head.bad { background: rgba(255,255,255,0.04); color: #888; }
+  .versus-head.good { background: var(--bordeaux); color: var(--blanc); }
+  .versus-row {
+    display: contents;
+  }
+  .versus-cell {
+    padding: 14px 20px;
+    font-size: 14px;
+    line-height: 1.5;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .versus-cell.bad { background: rgba(255,255,255,0.02); color: #888; }
+  .versus-cell.bad::before { content: '✗  '; color: #555; }
+  .versus-cell.good { background: var(--gris2); color: var(--blanc); }
+  .versus-cell.good::before { content: '✓  '; color: var(--or); }
+
+  /* ── MODULE CARDS ── */
+  .modules-section {
+    padding: 80px 0;
+    background: var(--gris);
+  }
+  .modules-track {
+    position: relative;
+    padding-left: 32px;
+  }
+  .modules-track::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--bordeaux) 0%, var(--or) 100%);
+  }
+  .module-card {
+    position: relative;
+    background: var(--gris2);
+    border: 1px solid rgba(201,168,76,0.1);
+    border-radius: 4px;
+    padding: 28px 28px 28px 32px;
+    margin-bottom: 16px;
+    transition: border-color 0.3s;
+  }
+  .module-card:hover {
+    border-color: rgba(201,168,76,0.3);
+  }
+  .module-card::before {
+    content: '';
+    position: absolute;
+    left: -38px;
+    top: 28px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--bordeaux);
+    border: 3px solid var(--gris);
+    box-shadow: 0 0 0 3px var(--bordeaux);
+  }
+  .module-num {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .module-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--blanc);
+    margin-bottom: 10px;
+  }
+  .module-desc {
+    font-size: 15px;
+    color: var(--texte);
+    line-height: 1.6;
+  }
+  .module-badge {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--or);
+    border: 1px solid rgba(201,168,76,0.3);
+    padding: 4px 12px;
+    border-radius: 2px;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin: 40px 0;
+    overflow: hidden;
+    border-radius: 4px;
+    border: 1px solid rgba(201,168,76,0.1);
+  }
+  .tl-block {
+    background: var(--gris2);
+    padding: 28px 20px;
+    text-align: center;
+    position: relative;
+  }
+  .tl-day {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--or);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .tl-label {
+    font-size: 13px;
+    color: var(--texte);
+    line-height: 1.4;
+  }
+  .tl-block::after {
+    content: '→';
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--bordeaux);
+    font-size: 16px;
+    z-index: 2;
+  }
+  .tl-block:last-child::after { display: none; }
+
+  /* ── OFFER BOX ── */
+  .offer-section {
+    padding: 80px 0;
+    background: radial-gradient(ellipse at 50% 100%, rgba(128,0,32,0.2) 0%, transparent 60%);
+  }
+  .offer-box {
+    background: var(--gris2);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .offer-header {
+    background: var(--bordeaux);
+    padding: 28px 40px;
+    text-align: center;
+  }
+  .offer-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--blanc);
+  }
+  .offer-header p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+    margin-top: 6px;
+  }
+  .offer-body {
+    padding: 40px;
+  }
+  .offer-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 15px;
+    color: var(--texte);
+  }
+  .offer-line:last-of-type { border-bottom: none; }
+  .offer-line .name { flex: 1; }
+  .offer-line .price-old {
+    text-decoration: line-through;
+    color: #555;
+    margin-right: 12px;
+    font-size: 14px;
+  }
+  .offer-line .price { color: var(--or); font-weight: 600; }
+  .offer-total {
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 4px;
+    padding: 24px 32px;
+    margin: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .offer-total .label {
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--or);
+  }
+  .offer-total .amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--or);
+    line-height: 1;
+  }
+  .offer-total .amount span {
+    font-size: 22px;
+    vertical-align: super;
+  }
+  .cta-btn {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, var(--bordeaux) 0%, #A0002A 100%);
+    color: var(--blanc);
+    text-align: center;
+    padding: 22px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 8px 32px rgba(128,0,32,0.4);
+    margin-bottom: 16px;
+  }
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(128,0,32,0.6);
+  }
+  .cta-sub {
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+  }
+  .cta-sub span { color: var(--or); }
+
+  /* ── GUARANTEE ── */
+  .guarantee {
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 4px;
+    padding: 28px 32px;
+    margin: 32px 0;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .guarantee-icon {
+    font-size: 32px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .guarantee h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--or);
+    margin-bottom: 8px;
+  }
+  .guarantee p {
+    font-size: 14px;
+    color: var(--texte);
+    line-height: 1.6;
+  }
+
+  /* ── FAQ ── */
+  .faq-section { padding: 80px 0; }
+  .faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 24px 0;
+  }
+  .faq-q {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--blanc);
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .faq-q::before {
+    content: '→ ';
+    color: var(--or);
+  }
+  .faq-a {
+    font-size: 15px;
+    color: var(--texte);
+    line-height: 1.7;
+    padding-left: 20px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 40px 24px;
+    text-align: center;
+  }
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    color: var(--or);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .footer-text {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* ── STICKY CTA ── */
+  .sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10,10,10,0.96);
+    border-top: 1px solid rgba(201,168,76,0.2);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 200;
+    backdrop-filter: blur(12px);
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+  }
+  .sticky-cta.visible { transform: translateY(0); }
+  .sticky-cta-text {
+    font-size: 14px;
+    color: var(--texte);
+  }
+  .sticky-cta-text strong { color: var(--or); }
+  .sticky-btn {
+    background: var(--bordeaux);
+    color: var(--blanc);
+    padding: 12px 24px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .sticky-btn:hover { background: #A0002A; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up {
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards;
+  }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.25s; }
+  .delay-3 { animation-delay: 0.4s; }
+
+  /* ── HIGHLIGHT ── */
+  .highlight {
+    background: linear-gradient(135deg, rgba(128,0,32,0.15) 0%, rgba(201,168,76,0.08) 100%);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 4px;
+    padding: 32px;
+    margin: 32px 0;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 640px) {
+    .stats-row { grid-template-columns: 1fr; }
+    .timeline { grid-template-columns: 1fr 1fr; }
+    .versus { grid-template-columns: 1fr; }
+    .versus-head.bad { display: none; }
+    .versus-cell.bad { display: none; }
+    .offer-body { padding: 24px 20px; }
+    nav { padding: 16px 20px; }
+    .sticky-cta { flex-direction: column; gap: 10px; text-align: center; }
+    .module-card { margin-left: 0; }
+    .modules-track { padding-left: 0; }
+    .modules-track::before { display: none; }
+    .module-card::before { display: none; }
+    .guarantee { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">Accès immédiat · Livraison instantanée</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo-nav">N O S I M P S Z O N E</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="lecture-tag fade-up">Lecture · 5 min</div>
+    <h1 class="fade-up delay-1">
+      Comment <em>séduire, gérer et garder</em><br>les femmes hors du commun.
+    </h1>
+    <p class="hero-sub fade-up delay-2">
+      Le guide complet pour l'homme qui refuse de rester ordinaire · basé sur la psychologie réelle de l'attraction féminine.
+    </p>
+    <div class="hero-divider fade-up delay-3"></div>
+
+    <div class="visual-hook fade-up delay-3">
+      <p class="hook-text">
+        "Il y a 18 mois, les femmes bien me glissaient entre les mains sans que je comprenne pourquoi. Aujourd'hui, je dois apprendre à gérer l'inverse."
+      </p>
+      <p class="hook-source">— Le point de départ de chaque homme qui lit cette page</p>
+    </div>
+
+    <p class="body-text fade-up">
+      Laisse-moi être direct avec toi dès le départ.
+    </p>
+    <p class="body-text">
+      Ce que je vais te dire ici, <strong>beaucoup d'hommes ne veulent pas l'entendre.</strong> Parce que ça remet en question des années de comportements qu'ils ont normalisés.
+    </p>
+    <p class="body-text">
+      Des comportements qui semblent raisonnables en surface. Être gentil. Être disponible. Montrer son intérêt. <em>Ne pas jouer à des jeux.</em>
+    </p>
+    <p class="body-text">
+      Le problème ? Avec une femme ordinaire, ça peut suffire.<br><strong>Avec une 10 sur 10, ça la fait fuir.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="pain-section">
+  <div class="container">
+    <span class="section-eyebrow">Le vrai problème</span>
+    <h2 class="section-title">Tu t'es reconnu dans l'une de ces situations ?</h2>
+
+    <ul class="pain-list">
+      <li>Tu approches une femme qui a de la valeur — et tu <strong>sens immédiatement</strong> que tu cherches son approbation sans le vouloir.</li>
+      <li>Tu as eu de belles conversations, des dates qui se sont bien passées — et elle a <strong>perdu l'intérêt du jour au lendemain</strong>, sans explication.</li>
+      <li>Tu l'as sur-texté. Tu t'es trop rendu disponible. Et tu as regardé l'intérêt <strong>s'évaporer en temps réel</strong>.</li>
+      <li>Tu sais que tu pourrais avoir des femmes de qualité — mais quelque chose t'en empêche, et tu <strong>n'arrives pas à mettre le doigt dessus.</strong></li>
+      <li>Tu as essayé des techniques de drague. Ça marche sur certaines. Mais sur les meilleures, <strong>elles sentent le script</strong> immédiatement.</li>
+      <li>Tu te retrouves systématiquement avec des femmes en dessous de ton niveau réel — parce que tu ne sais pas <strong>comment te comporter avec les autres.</strong></li>
+    </ul>
+
+    <div class="impact-quote">
+      <p>"Ce n'est pas toi le problème. C'est la façon dont tu as été formé à interagir avec les femmes. Et ce que ça t'a coûté en opportunités, tu ne peux même pas l'estimer."</p>
+    </div>
+  </div>
+</section>
+
+<!-- VÉRITÉ -->
+<section style="padding: 80px 0;">
+  <div class="container">
+    <span class="section-eyebrow">La réalité que personne ne dit</span>
+    <h2 class="section-title">Une <em>10 sur 10</em> ne fonctionne pas comme les autres.</h2>
+
+    <p class="body-text">
+      Une 10 sur 10 n'est pas juste une femme physiquement belle. C'est une femme qui combine une attractivité certaine, <strong>une conscience aiguë d'elle-même</strong> et des options réelles et concrètes.
+    </p>
+    <p class="body-text">
+      Des options qui signifient qu'elle reçoit de l'attention régulièrement. Que ses choix ne sont pas dictés par la peur de rester seule. Que chaque homme qui entre dans sa vie est <strong>évalué, pas accueilli les bras ouverts.</strong>
+    </p>
+    <p class="body-text">
+      Elle a développé un radar précis. Elle détecte <em>immédiatement</em> ce que la plupart des hommes ne réalisent même pas qu'ils émettent.
+    </p>
+
+    <div class="stats-row">
+      <div class="stat-block">
+        <div class="stat-num">3 sec</div>
+        <div class="stat-label">Temps pour qu'elle détecte ton niveau de confiance réel</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">5</div>
+        <div class="stat-label">Étapes de la séduction que 90% des hommes sautent</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">4</div>
+        <div class="stat-label">Hormones à activer pour créer une attraction qui dure</div>
+      </div>
+    </div>
+
+    <p class="body-text">
+      Ce qu'elle détecte immédiatement : <strong>le besoin d'approbation</strong> dans une légère tension de ta voix. <strong>L'idéalisation</strong> dans un regard qui en dit trop. <strong>La performance</strong> d'un homme qui joue un rôle plutôt que d'être.
+    </p>
+    <p class="body-text">
+      Les techniques classiques de séduction ont été conçues pour des femmes ordinaires. Avec une 10 sur 10, <em>elles font exactement l'inverse de l'effet voulu.</em>
+    </p>
+  </div>
+</section>
+
+<!-- FORMULE -->
+<section style="padding: 0 0 80px; background: var(--gris);">
+  <div class="container" style="padding-top: 80px;">
+    <span class="section-eyebrow">La science derrière l'attraction</span>
+    <h2 class="section-title">L'addiction émotionnelle n'est pas du hasard. <em>C'est de la chimie.</em></h2>
+
+    <p class="body-text">
+      Pour qu'une femme à haute valeur s'attache réellement, <strong>trois éléments doivent être activés simultanément.</strong> C'est la formule de l'addiction émotionnelle. Pas un, pas deux — les trois ensemble.
+    </p>
+
+    <div class="highlight">
+      <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; text-align: center;">
+        <div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 36px; color: var(--or); margin-bottom: 8px;">V</div>
+          <div style="font-weight: 700; color: var(--blanc); margin-bottom: 6px;">Valeur perçue</div>
+          <div style="font-size: 13px; color: var(--texte);">Ton lifestyle, ta direction, ton cadre intérieur. Ce qu'elle ressent sans que tu l'expliques.</div>
+        </div>
+        <div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 36px; color: var(--bordeaux); margin-bottom: 8px;">+</div>
+          <div style="font-weight: 700; color: var(--blanc); margin-bottom: 6px;">Incertitude calibrée</div>
+          <div style="font-size: 13px; color: var(--texte);">70% sécurité, 30% mystère. Le sweet spot. Trop prévisible = ennui. Trop chaotique = anxiété.</div>
+        </div>
+        <div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 36px; color: var(--or); margin-bottom: 8px;">I</div>
+          <div style="font-weight: 700; color: var(--blanc); margin-bottom: 6px;">Investissement</div>
+          <div style="font-size: 13px; color: var(--texte);">Plus elle donne, plus elle s'attache. C'est neurochimique, pas psychologique.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="impact-quote">
+      <p>"L'attraction d'une femme à haute valeur n'est pas un choix conscient. Elle se produit avant qu'elle comprenne pourquoi. Ton rôle : activer les bons leviers biologiques."</p>
+    </div>
+
+    <p class="body-text">
+      Derrière tout ça, il y a <strong>quatre hormones précises</strong> — Dopamine, Ocytocine, Sérotonine, Endorphines — qui créent l'attachement. Chacune peut être activée intentionnellement à chaque étape de la séduction.
+    </p>
+    <p class="body-text">
+      C'est exactement ce que <em>Le Code des Élites</em> t'apprend à faire — <strong>étape par étape, avec des scripts concrets pour chaque situation.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- TRANSFORMATION -->
+<section class="transform-section">
+  <div class="container">
+    <span class="section-eyebrow">Ce qui change</span>
+    <h2 class="section-title">Imagine un instant.</h2>
+
+    <p class="body-text">
+      Tu approaches une femme qui attire tout le monde dans la pièce. <strong>Et tu n'as pas besoin de chercher ses yeux pour te rassurer.</strong> Tu es simplement là, curieux, ancré, présent.
+    </p>
+    <p class="body-text">
+      Elle te répond. Pas par politesse — par véritable intérêt. Parce qu'il y a quelque chose dans ta façon d'être qui <em>ne ressemble à rien de ce qu'elle voit d'habitude.</em>
+    </p>
+    <p class="body-text">
+      Après le date, tu ne t'interroges pas sur ce qu'elle a pensé. Tu ne sur-textes pas. Tu ne cherches pas de signaux. <strong>Tu continues ta vie.</strong> Et c'est précisément ça qui lui donne envie de revenir.
+    </p>
+
+    <div class="versus">
+      <div class="versus-head bad">Avant ce guide</div>
+      <div class="versus-head good">Après ce guide</div>
+      <div class="versus-cell bad">Approche avec besoin d'approbation invisible</div>
+      <div class="versus-cell good">Approche avec énergie neutre et curiosité ancrée</div>
+      <div class="versus-cell bad">Texte trop souvent, perd l'intérêt</div>
+      <div class="versus-cell good">Maîtrise la rareté calibrée et crée du manque</div>
+      <div class="versus-cell bad">Perd son cadre face à ses tests</div>
+      <div class="versus-cell good">Lit les tests et reste stable — ce qui amplifie l'attraction</div>
+      <div class="versus-cell bad">Dates sans arc émotionnel — sympa mais oublié</div>
+      <div class="versus-cell good">Crée des expériences mémorables avec intention</div>
+      <div class="versus-cell bad">Suivi chaotique : trop ou trop peu</div>
+      <div class="versus-cell good">Suivi stratégique avec scripts précis par situation</div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section class="modules-section" id="programme">
+  <div class="container">
+    <span class="section-eyebrow">Ce que tu vas apprendre</span>
+    <h2 class="section-title"><em>Le Code des Élites</em> — ce que le guide contient.</h2>
+
+    <p class="body-text">
+      Un guide complet de A à Z sur les cinq étapes de la séduction d'une femme à haute valeur. Chaque partie est accompagnée de <strong>scripts prêts à l'emploi</strong> — pas à réciter, mais à intégrer.
+    </p>
+
+    <div class="modules-track" style="margin-top: 40px;">
+
+      <div class="module-card">
+        <div class="module-num">Partie I</div>
+        <div class="module-title">Comprendre une 10 sur 10</div>
+        <div class="module-desc">Ce qu'est vraiment une femme à haute valeur. Pourquoi les règles ordinaires échouent avec elle. Le profil précis de l'homme qu'elle finit par choisir — et comment devenir cet homme.</div>
+        <span class="module-badge">Psychologie · Formule DOSE · Biais cognitifs</span>
+      </div>
+
+      <div class="module-card">
+        <div class="module-num">Partie II</div>
+        <div class="module-title">La Drague</div>
+        <div class="module-desc">L'approche qui ne cherche pas sa validation. Installer le confort. Faire naître l'intérêt émotionnel. Créer la connexion. Le teasing calibré et le push/pull — l'outil le plus puissant avec une 10/10. Scripts par contexte.</div>
+        <span class="module-badge">6 chapitres · 20+ scripts · Tableaux de calibration</span>
+      </div>
+
+      <div class="module-card">
+        <div class="module-num">Partie III</div>
+        <div class="module-title">La Prise de Rendez-vous</div>
+        <div class="module-desc">Les 4 indicateurs qui montrent qu'elle est prête. Comment proposer (pas demander) avec confiance. Gérer les hésitations sans fléchir. Les erreurs qui font fuir avant même le date.</div>
+        <span class="module-badge">4 chapitres · Scripts de proposition · Tableau hésitations</span>
+      </div>
+
+      <div class="module-card">
+        <div class="module-num">Partie IV</div>
+        <div class="module-title">Le Date</div>
+        <div class="module-desc">La stratégie des 3 dates progressifs (Excitation → Connexion → Inoubliable). L'arc émotionnel. L'escalade en 6 niveaux. Comment finir le date en position de force. Scripts pour chaque moment.</div>
+        <span class="module-badge">4 chapitres · Arc émotionnel · Escalade progressive</span>
+      </div>
+
+      <div class="module-card">
+        <div class="module-num">Partie V</div>
+        <div class="module-title">La Clôture</div>
+        <div class="module-desc">Les 5 types de tests féminins avant la clôture — et comment les gérer. Les signaux verts. Les 5 types de clôture avec scripts. Gérer un refus sans perdre le cadre. Le repositionnement stratégique post-date.</div>
+        <span class="module-badge">4 chapitres · Tableau des tests · 5 types de clôture</span>
+      </div>
+
+      <div class="module-card">
+        <div class="module-num">Partie VI</div>
+        <div class="module-title">Le Suivi</div>
+        <div class="module-desc">La psychologie du suivi avec une femme à haute valeur. Fréquence, ton, distance stratégique. Règle 2:3. Gérer le silence, le froid et le ghosting. Le plan D.O.S.E. hebdomadaire pour l'attraction durable.</div>
+        <span class="module-badge">4 chapitres · Plan DOSE · Scripts de relance</span>
+      </div>
+
+      <div class="module-card" style="border-color: rgba(201,168,76,0.25);">
+        <div class="module-num" style="color: var(--bordeaux);">Chapitre Bonus</div>
+        <div class="module-title">Quand partir — Les red flags à ne jamais ignorer</div>
+        <div class="module-desc">Test sain vs toxicité. Les 10 red flags à ne jamais ignorer avec une femme à haute valeur. Le mindset d'abondance. Couper proprement en 3 étapes.</div>
+        <span class="module-badge" style="border-color: rgba(128,0,32,0.4); color: var(--bordeaux);">Bonus · Mindset · Red flags</span>
+      </div>
+
+    </div>
+
+    <div style="margin-top: 40px; padding: 28px; background: var(--gris2); border: 1px solid rgba(201,168,76,0.12); border-radius: 4px;">
+      <h4 style="font-family: 'Playfair Display', serif; font-size: 18px; color: var(--or); margin-bottom: 16px;">+ 4 Annexes complètes</h4>
+      <ul class="check-list">
+        <li><strong>Répertoire complet de scripts</strong> — Approche, RDV, date, clôture, suivi. Tous les contextes couverts.</li>
+        <li><strong>Checklist par étape</strong> — Ce que tu dois avoir en tête avant chaque phase.</li>
+        <li><strong>Plan de transformation 30 jours</strong> — Une action par jour. Une semaine par thème.</li>
+        <li><strong>Glossaire du Code des Élites</strong> — 15 concepts clés expliqués simplement.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section style="padding: 80px 0;">
+  <div class="container">
+    <span class="section-eyebrow">Ta progression</span>
+    <h2 class="section-title">Dès que tu commences à appliquer.</h2>
+
+    <div class="timeline">
+      <div class="tl-block">
+        <div class="tl-day">J+1</div>
+        <div class="tl-label">Tu comprends ce qui te bloquait. Le schéma devient clair.</div>
+      </div>
+      <div class="tl-block">
+        <div class="tl-day">J+7</div>
+        <div class="tl-label">Tes premières approches changent d'énergie. Elle le sent.</div>
+      </div>
+      <div class="tl-block">
+        <div class="tl-day">J+21</div>
+        <div class="tl-label">Ton cadre se solidifie. Tu gères les tests sans réagir.</div>
+      </div>
+      <div class="tl-block">
+        <div class="tl-day">J+30</div>
+        <div class="tl-label">Tu n'appliques plus des techniques. Tu es devenu l'homme.</div>
+      </div>
+    </div>
+
+    <div class="impact-quote">
+      <p>"Tu n'apprends pas à jouer un rôle. Tu apprends à devenir l'homme que les meilleures choisissent — naturellement."</p>
+    </div>
+  </div>
+</section>
+
+<!-- OFFRE -->
+<section class="offer-section" id="offre">
+  <div class="container">
+    <span class="section-eyebrow">Accès immédiat</span>
+    <h2 class="section-title">Tout ce que tu reçois <em>aujourd'hui.</em></h2>
+
+    <div class="offer-box">
+      <div class="offer-header">
+        <h3>Le Code des Élites — Guide Complet</h3>
+        <p>Livraison instantanée · Format PDF · Lecture sur tous supports</p>
+      </div>
+      <div class="offer-body">
+
+        <div class="offer-line">
+          <span class="name">Partie I — Comprendre une 10 sur 10</span>
+          <span class="price-old">19€</span>
+          <span class="price">Inclus</span>
+        </div>
+        <div class="offer-line">
+          <span class="name">Partie II — La Drague (6 chapitres + scripts)</span>
+          <span class="price-old">24€</span>
+          <span class="price">Inclus</span>
+        </div>
+        <div class="offer-line">
+          <span class="name">Partie III — La Prise de Rendez-vous</span>
+          <span class="price-old">19€</span>
+          <span class="price">Inclus</span>
+        </div>
+        <div class="offer-line">
+          <span class="name">Partie IV — Le Date (3 dates progressifs)</span>
+          <span class="price-old">24€</span>
+          <span class="price">Inclus</span>
+        </div>
+        <div class="offer-line">
+          <span class="name">Partie V — La Clôture (5 types + tests)</span>
+          <span class="price-old">19€</span>
+          <span class="price">Inclus</span>
+        </div>
+        <div class="offer-line">
+          <span class="name">Partie VI — Le Suivi + Plan DOSE</span>
+          <span class="price-old">19€</span>
+          <span class="price">Inclus</span>
+        </div>
+        <div class="offer-line">
+          <span class="name">Chapitre Bonus — Red Flags & Mindset</span>
+          <span class="price-old">12€</span>
+          <span class="price">Inclus</span>
+        </div>
+        <div class="offer-line">
+          <span class="name">Répertoire complet de scripts (50+)</span>
+          <span class="price-old">15€</span>
+          <span class="price">Inclus</span>
+        </div>
+        <div class="offer-line">
+          <span class="name">Plan transformation 30 jours + Checklist</span>
+          <span class="price-old">12€</span>
+          <span class="price">Inclus</span>
+        </div>
+
+        <div class="offer-total">
+          <div>
+            <div class="label">Prix aujourd'hui</div>
+            <div style="font-size: 12px; color: #666; margin-top: 4px;">Au lieu de 97€</div>
+          </div>
+          <div class="amount"><span>€ </span>19,99€</div>
+        </div>
+
+        <a href="https://nosimpszone.mychariow.shop/prd_cumw0xau/checkout" target="_blank" rel="noopener" class="cta-btn">
+          Obtenir le Code des Élites maintenant →
+        </a>
+        <p class="cta-sub">Livraison instantanée · <span>Paiement sécurisé</span> · Accès à vie</p>
+
+        <div class="guarantee">
+          <div class="guarantee-icon">🛡</div>
+          <div>
+            <h4>Garantie satisfaction 7 jours</h4>
+            <p>Si tu appliques les principes du guide pendant 7 jours et que tu ne vois aucun changement dans tes interactions, on te rembourse intégralement. Sans question. Sans discussion.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <span class="section-eyebrow">Questions fréquentes</span>
+    <h2 class="section-title">Ce que tu te demandes peut-être.</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">C'est pour quel niveau — débutant ou avancé ?</div>
+      <div class="faq-a">Le guide est construit pour les deux. Si tu débutes, la structure progressive te donne une fondation solide. Si tu as déjà de l'expérience, les chapitres sur le teasing calibré, les tests, la clôture et le suivi vont te faire monter de niveau sur ce que tu ne maîtrises pas encore.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Est-ce que ça marche pour les femmes africaines et la diaspora ?</div>
+      <div class="faq-a">Le guide est pensé depuis la perspective de l'homme africain francophone. Les exemples, les contextes et l'angle sont adaptés à notre réalité culturelle — pas copiés-collés d'un autre marché.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">C'est quoi la différence avec les autres guides de séduction ?</div>
+      <div class="faq-a">La plupart des guides ont été créés pour des femmes ordinaires. Ce guide est spécifiquement conçu pour les femmes à haute valeur — celles qui ont des options et qui testent activement. Chaque chapitre est réencadré pour cette réalité. Plus les scripts sont concrets et contextualisés, pas génériques.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Est-ce que c'est de la manipulation ?</div>
+      <div class="faq-a">Non. Ce guide t'apprend à comprendre la psychologie de l'attraction et à devenir authentiquement l'homme qu'une femme à haute valeur choisit. Il n'y a pas de techniques pour forcer quoi que ce soit. L'objectif est de te faire progresser — pas de manipuler l'autre.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Comment je reçois le guide ?</div>
+      <div class="faq-a">Immédiatement après le paiement. Tu reçois un lien de téléchargement direct. Le guide est en PDF — lisible sur ton téléphone, ta tablette ou ton ordinateur, sans connexion internet nécessaire.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Et si ça ne m'apporte rien ?</div>
+      <div class="faq-a">Tu as 7 jours pour le tester. Si tu appliques les principes et que tu ne constates aucun changement dans tes interactions, tu nous contactes et on te rembourse intégralement. Sans condition.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section style="padding: 80px 0; text-align: center; background: var(--gris); border-top: 1px solid rgba(201,168,76,0.1);">
+  <div class="container">
+    <h2 class="section-title" style="margin-bottom: 20px;">
+      La vraie question n'est pas<br><em>si tu peux devenir cet homme.</em>
+    </h2>
+    <p class="body-text" style="text-align: center; max-width: 500px; margin: 0 auto 40px;">
+      C'est combien de temps tu vas encore laisser passer des femmes exceptionnelles entre tes mains faute d'avoir les bons outils.
+    </p>
+    <a href="https://nosimpszone.mychariow.shop/prd_cumw0xau/checkout" target="_blank" rel="noopener" class="cta-btn" style="display: inline-block; width: auto; padding: 22px 60px;">
+      Obtenir le Code des Élites →
+    </a>
+    <p style="margin-top: 16px; font-size: 13px; color: #555;">19,99€ · Livraison instantanée · Garantie 7 jours</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">N O S I M P S Z O N E</div>
+  <p class="footer-text">
+    Ce guide est la propriété de Nosimpszone. Tous droits réservés.<br>
+    <a href="#" style="color: #555; text-decoration: none;">Mentions légales</a> · <a href="#" style="color: #555; text-decoration: none;">Politique de confidentialité</a>
+  </p>
+</footer>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta-text">
+    <strong>Le Code des Élites</strong> · 19,99€
+  </div>
+  <a href="#offre" class="sticky-btn">Obtenir maintenant →</a>
+</div>
+
+<script>
+  // Sticky CTA visibility
+  const stickyCta = document.getElementById('stickyCta');
+  const hero = document.querySelector('.hero');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) {
+        stickyCta.classList.add('visible');
+      } else {
+        stickyCta.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  observer.observe(hero);
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
